@@ -1,0 +1,122 @@
+.envelope {
+    width: 100%;
+    height: 100%;
+    
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    background-color: rgb(49,13,60);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+
+.front {
+    position: absolute;
+    z-index: 3;
+    width: 0;
+    height: 0;
+
+}
+
+.flap {
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-bottom: 139px solid transparent;
+    border-top: 161px solid rgb(49, 13, 60);
+    transform-origin: top;
+    z-index: 4;
+    position: absolute;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    transition: transform 0.25s linear;
+}
+.flap.one {
+    border-top: 161px solid rgb(49, 13, 60);
+    transform: rotateX(0deg);
+    z-index: 4;
+    transition-delay: 0.75s;
+    cursor: pointer;
+}
+.flap.two {
+    border-top: 161px solid rgb(49, 17, 59);
+    transform: rotateX(90deg);
+    z-index: 1;
+    transition-delay: 0.5s;
+    cursor: pointer;
+}
+.pocket {
+    border-left: 200px solid rgb(112, 47, 132) ;
+    border-right: 200px solid rgb(112, 47, 132) ;
+    border-bottom: 150px solid rgb(93, 35, 110);
+    border-top: 150px solid transparent;
+    cursor: pointer;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.letter {
+    background: #dedede;
+    width: 80%;
+    top: 0;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    
+    transition: 0.5s;
+    z-index: 2;
+    position: absolute;
+}
+.envelope-container {
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+        height: 300px;
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        top: 300px;
+        position: relative;
+
+}
+.envelope-container:hover .flap.one {
+    transform: rotateX(90deg);
+    transition-delay: 0s;
+}
+.envelope-container:hover .flap.two {
+    transform: rotateX(180deg);
+    transition-delay: 0.25s;
+} 
+.envelope-container:hover .letter {
+    transform: translateY(-100px);
+    transition-delay: 0.5s;
+}
+.message {
+    padding: 15px;
+    font-family: 'Allura';
+}
+.message.short {
+    cursor: pointer;
+}
+#expanded-letter {
+    display: none;
+    width: 800px;
+    height: 1200px;
+    background-color: #dedede;
+    z-index: 5;
+    margin-left: auto;
+    margin-right: auto;
+    position: sticky;
+    bottom: 125px;
+    border-radius: 10px;
+    
+}
+.message.long {
+    font-size: 25px;
+}
+body {
+    background-repeat: no-repeat;
+    background-image: url('https://i.pinimg.com/originals/82/47/ef/8247ef85912ac6dfc31772b5ebea1226.gif');
+    background-size: cover;
+}
